@@ -4,15 +4,19 @@ import com.mthree.c130.vendingMachine.dto.Item;
 import com.mthree.c130.vendingMachine.service.ServiceLayerExceptions;
 import com.mthree.c130.vendingMachine.service.VendingMachineService;
 import com.mthree.c130.vendingMachine.ui.VendingMachineView;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Collection;
 
+@Component
 public class VendingMachineController {
    private final VendingMachineService service;
    private final VendingMachineView view;
 
+   @Autowired
    public VendingMachineController(VendingMachineService service, VendingMachineView view) {
       this.service = service;
       this.view = view;

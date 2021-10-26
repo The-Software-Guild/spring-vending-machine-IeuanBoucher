@@ -1,9 +1,12 @@
 package com.mthree.c130.vendingMachine.ui;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+@Component
 public class UserIOConsoleImplementation implements UserIO {
    final private Scanner consoleScanner = new Scanner(System.in);
 

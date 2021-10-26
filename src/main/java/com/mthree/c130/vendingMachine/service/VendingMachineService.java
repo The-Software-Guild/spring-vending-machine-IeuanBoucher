@@ -3,18 +3,22 @@ package com.mthree.c130.vendingMachine.service;
 import com.mthree.c130.vendingMachine.dao.VendingMachineAuditDao;
 import com.mthree.c130.vendingMachine.dao.VendingMachineDao;
 import com.mthree.c130.vendingMachine.dto.Item;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Collection;
 
+@Component
 public class VendingMachineService {
    private final VendingMachineDao dao;
    private final VendingMachineAuditDao auditDao;
 
    private BigDecimal currentBalance = new BigDecimal("0.00");
 
+   @Autowired
    public VendingMachineService(VendingMachineDao dao, VendingMachineAuditDao auditDao) {
       this.dao = dao;
       this.auditDao = auditDao;

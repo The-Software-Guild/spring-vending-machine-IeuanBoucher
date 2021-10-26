@@ -2,6 +2,8 @@ package com.mthree.c130.vendingMachine.ui;
 
 import com.mthree.c130.vendingMachine.dto.Item;
 import com.mthree.c130.vendingMachine.service.Coin;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -10,10 +12,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
+@Component
 public class VendingMachineView {
 
    private final UserIO userInputOutput;
 
+   @Autowired
    public VendingMachineView(UserIO userIO) {
       this.userInputOutput = userIO;
    }

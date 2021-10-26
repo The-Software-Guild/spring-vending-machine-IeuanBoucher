@@ -1,11 +1,13 @@
 package com.mthree.c130.vendingMachine.dao;
 
 import com.mthree.c130.vendingMachine.dto.Item;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.math.BigDecimal;
 import java.util.*;
 
+@Component
 public class VendingMachineDaoFileImplementation implements VendingMachineDao {
    private final Map<String, Item> itemMap = new HashMap<>();
    private final String VENDING_MACHINE_FILENAME = "src/main/resources/machineItems.txt";

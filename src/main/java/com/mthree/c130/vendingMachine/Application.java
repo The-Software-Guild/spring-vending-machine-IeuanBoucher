@@ -1,16 +1,15 @@
 package com.mthree.c130.vendingMachine;
 
 import com.mthree.c130.vendingMachine.controller.VendingMachineController;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Application {
    public static void main(String[] args) {
+      AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext();
+      appContext.scan("com.mthree.c130.vendingMachine");
+      appContext.refresh();
 
-      ApplicationContext appContext
-              = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-
-      VendingMachineController controller = appContext.getBean("controller", VendingMachineController.class);
+      VendingMachineController controller = appContext.getBean("vendingMachineController", VendingMachineController.class);
       controller.run();
    }
 }
